@@ -7,6 +7,7 @@ import {createStore} from 'redux';
 import {Provider, connect} from 'react-redux';
 import contentReducer from './reducers/content-reducer.js';
 import markedUpContent from './actions/markedUpContent.js';
+import clearMarkUp from './actions/clearMarkUp.js'
 
 //declare the store
 const store = createStore(contentReducer);
@@ -16,10 +17,15 @@ const mapStateToProps = (state) => {
   return {marked: state}
 }
 
+//Define the actions that I want to dispatch to all my components
 const mapDispatchToProps = (dispatch) => {
   return {
     markedUpContent: (content) => {
       dispatch(markedUpContent(content));
+    },
+
+    clearMarkUp: ()=>{
+      dispatch(clearMarkUp());
     }
   }
 }
