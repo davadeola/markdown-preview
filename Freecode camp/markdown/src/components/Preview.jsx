@@ -11,14 +11,14 @@ const Preview = (props) => {
       allowedAttributes: false
     });
   } else {
-    clean = sanitizeHtml(marked("# Marked in the browser Rendered by **marked**."), {
+    clean = sanitizeHtml(marked("### Hello! Let's type some markdown"), {
       allowedTags: false,
       allowedAttributes: false
     });
   }
 
   return (<div className="preview view">
-    <h1>Your markdown preview</h1>
+    <h2>Your markdown preview</h2>
     <div id="content" dangerouslySetInnerHTML={{
         __html: clean
       }} className="border border-info"/>

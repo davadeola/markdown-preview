@@ -13,6 +13,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClear = this.handleClear.bind(this);
   }
+  
 
   handleChange = (e) => {
     this.setState({content: e.target.value});
